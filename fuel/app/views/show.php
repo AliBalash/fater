@@ -290,21 +290,21 @@
 
         <!-- Main content -->
         <div class="content">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-11">
+          <div class="container-fluid" >
+            <div class="row" >
+              <div class="col-lg-11" >
 
 
 
-                <div class="card" dir="rtl" style="text-align: justify">
+                <div class="card" dir="rtl" style="text-align: justify" >
 
                 </div>
 
-                <div id="ajax-chats-loads-here" class="card card-prirary cardutline direct-chat direct-chat-primary">
-                  <div class="card-header">
+                <div id="ajax-chats-loads-here" class="card card-prirary cardutline direct-chat direct-chat-primary" >
+                  <div class="card-header" >
                     <h3 class="card-title">Direct Chat</h3>
 
-                    <div class="card-tools">
+                    <div class="card-tools" >
                       <span data-toggle="tooltip" title="3 New Messages" class="badge bg-primary">3</span>
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                       </button>
@@ -315,9 +315,9 @@
                     </div>
                   </div>
                   <!-- /.card-header -->
-                  <div class="card-body">
+                  <div class="card-body" >
                     <!-- Conversations are loaded here -->
-                    <div class="direct-chat-messages">
+                    <div class="direct-chat-messages" style="height: 500px;">
                       <!-- Message. Default to the left -->
                       <?php
                       foreach ($message as $data) {
@@ -416,19 +416,19 @@
                 <thead>
                   <tr>
                     <th scope="col">FullName</th>
-                    <th scope="col">date</th>
+                    <th scope="col">tedad</th>
                   </tr>
                 </thead>
                 <tbody>
-                <tbody>
                   <?php foreach ($max as $person) { ?>
                     <tr>
-                    <td><?php echo $person["fullname"]; ?></td>
-                    <td><?php echo $person["date"]; ?></td>
+                      <td><?php echo $person["fullname"]; ?></td>
+                      <td><?php echo $person["tedad"]; ?></td>
                     </tr>
                   <?php } ?>
 
-                </tbody>
+
+
                 </tbody>
               </table>
                
@@ -466,5 +466,11 @@
 
     <!-- REQUIRED SCRIPTS -->
 </body>
-
+<script>
+$(document).ready(function(){
+  $("img").click(function(){
+    alert("عدم نمایش تصویر");
+  });
+});
+</script>
 </html>

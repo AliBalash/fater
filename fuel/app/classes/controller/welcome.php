@@ -6,18 +6,8 @@ class Controller_Welcome extends Controller
 
 	public function action_index()
 	{
-		// $db = new mysqli('localhost', 'root', '', 'emoji');
-		// $res = $db->query("select * from message")->fetch_all();
-
-		// $today = date("Y-m-d H:i:s");
-		// $statement = $db->prepare("INSERT INTO `message` (`date`) VALUES ('$today')");
-		// // $statement->bind_param('s', $today);
-		// // $statement->execute();
-		// echo date("Y-m-d H:i:s");
-		// var_dump($statement);
+		
 		date_default_timezone_set('Asia/Tehran');
-		echo date("h:m:s");
-		// var_dump(date("h:m:s"));
 		return \View::forge('template');
 	}
 
@@ -41,7 +31,7 @@ class Controller_Welcome extends Controller
 			if ($result["fullname"] == $name) {
 
 				$query =  DB::select()->from('message')->execute();
-				$max = DB::query('select * from message where date >= date_sub(now(),interval 2 minute)')->execute();
+				$max = DB::query('select fullname,COUNT(fullname) AS tedad from message where date >= date_sub(now(),interval 1 minute) group by fullname order by tedad DESC')->execute();
 
 				return \View::forge('login', compact("name", "query", "max"));
 			} else {
@@ -96,7 +86,7 @@ class Controller_Welcome extends Controller
 	public function action_show($name)
 	{
 		$message =  DB::select()->from('message')->execute();
-		$max = DB::query('select * from message where date >= date_sub(now(),interval 2 minute)')->execute();
+		$max = DB::query('select fullname,COUNT(fullname) AS tedad from message where date >= date_sub(now(),interval 1 minute) group by fullname order by tedad DESC')->execute();
 		return \View::forge('show', compact("name", "message", "max"));
 		// var_dump($name);
 	}

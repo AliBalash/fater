@@ -43,6 +43,19 @@
      *
      */
   </script>
+<script src="jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#submit").mouseenter(function(){
+    alert("لطفا ابتدا لاگین کنید");
+  });
+});
+</script>
+<body>
+
+<p id="p1"></p>
+
+</body>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -353,7 +366,7 @@
                     <div class="input-group">
                       <input type="text" name="message" placeholder="Type Message ..." class="form-control">
                       <span class="input-group-append">
-                        <button type="submit" class="btn btn-primary">Send</button>
+                        <button type="submit" class="btn btn-primary" id="submit">Send</button>
                       </span>
                     </div>
                   </form>

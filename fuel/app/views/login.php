@@ -81,6 +81,13 @@
      *
      */
   </script>
+  <script>
+    $(document).ready(function() {
+      $("img").click(function() {
+        alert("عدم نمایش تصویر");
+      });
+    });
+  </script>
 </head>
 <script type="text/javascript">
   alert("<?php echo "خوش امدید" . $name  ?>")
@@ -88,10 +95,8 @@
 
 <body class="hold-transition sidebar-mini">
 
+  <meta http-equiv="refresh" content="300">
   <div class="wrapper">
-    <meta http-equiv="refresh" content="300">
-
-
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -326,7 +331,7 @@
                   <!-- /.card-header -->
                   <div class="card-body">
                     <!-- Conversations are loaded here -->
-                    <div class="direct-chat-messages">
+                    <div class="direct-chat-messages" style="height: 500px;">
                       <!-- Message. Default to the left -->
                       <?php
                       foreach ($query as $data) {
@@ -427,14 +432,14 @@
                 <thead>
                   <tr>
                     <th scope="col">FullName</th>
-                    <th scope="col">time</th>
+                    <th scope="col">tedad</th>
                   </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($max as $person) { ?>
+                  <?php foreach ($max as $person) { ?>
                     <tr>
-                    <td><?php echo $person["fullname"]; ?></td>
-                    <td><?php echo $person["date"]; ?></td>
+                      <td><?php echo $person["fullname"]; ?></td>
+                      <td><?php echo $person["tedad"]; ?></td>
                     </tr>
                   <?php } ?>
 
